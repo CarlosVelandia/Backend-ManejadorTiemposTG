@@ -1,0 +1,21 @@
+jasypt:
+  encryptor:
+    password: ${jasyptpwd:mi-adn-ceiba}
+    algorithm: PBEWithMD5AndDES
+
+server:
+  port: 8084
+  servlet:
+    context-path: /tiquetes-parque-diversiones
+    session:
+      timeout: 21600s
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    jdbcUrl: jdbc:mysql://localhost:3306/tiquetes-parque-diversiones?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: ceiba
+    password: ENC(WcfF8M2GEHxxAS7T1pInwg==)
+    hikari:
+      poolName: pool
