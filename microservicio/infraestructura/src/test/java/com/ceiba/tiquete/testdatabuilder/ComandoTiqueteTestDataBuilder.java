@@ -1,8 +1,8 @@
-package com.ceiba.tiquete.testdatabuilder;
+package com.ceiba.proceso.testdatabuilder;
 
-import com.ceiba.tiquete.comando.ComandoTiquete;
+import com.ceiba.proceso.comando.ComandoProceso;
 
-public class ComandoTiqueteTestDataBuilder {
+public class ComandoProcesoTestDataBuilder {
 
     private Long id;
     private Long idUsuario;
@@ -10,7 +10,7 @@ public class ComandoTiqueteTestDataBuilder {
     private String fechaCompra;
     private double valor;
 
-    public ComandoTiqueteTestDataBuilder() {
+    public ComandoProcesoTestDataBuilder() {
         this.id = 0l;
         this.idUsuario = 1l;
         this.idParque = 1l;
@@ -18,32 +18,32 @@ public class ComandoTiqueteTestDataBuilder {
         this.valor= 15000;
     }
 
-    public ComandoTiqueteTestDataBuilder conId(Long id) {
+    public ComandoProcesoTestDataBuilder conId(Long id) {
         this.id = id;
         return this;
     }
 
-    public ComandoTiqueteTestDataBuilder conIdUsuario(long idUsuario) {
+    public ComandoProcesoTestDataBuilder conIdUsuario(long idUsuario) {
         this.idUsuario = idUsuario;
         return this;
     }
 
-    public ComandoTiqueteTestDataBuilder conIdParque(long idParque) {
+    public ComandoProcesoTestDataBuilder conIdParque(long idParque) {
         this.idParque = idParque;
         return this;
     }
 
-    public ComandoTiqueteTestDataBuilder conFechaCompra(String fechaCompra) {
+    public ComandoProcesoTestDataBuilder conFechaCompra(String fechaCompra) {
         this.fechaCompra = fechaCompra;
         return this;
     }
 
-    public ComandoTiqueteTestDataBuilder conValor(double valor) {
+    public ComandoProcesoTestDataBuilder conValor(double valor) {
         this.valor = valor;
         return this;
     }
 
-    public ComandoTiquete build() {
-        return new ComandoTiquete(id, idUsuario, idParque, fechaCompra, valor);
+    public ComandoProceso build() {
+        return new ComandoProceso(id, idUsuario, idParque, fechaCompra, valor);
     }
 }

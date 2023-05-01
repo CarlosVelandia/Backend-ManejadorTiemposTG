@@ -15,7 +15,7 @@ create table parque
     primary key (id)
 );
 
-create table tiquete
+create table proceso
 (
     id           int(11) not null auto_increment,
     id_usuario   int(11) not null,

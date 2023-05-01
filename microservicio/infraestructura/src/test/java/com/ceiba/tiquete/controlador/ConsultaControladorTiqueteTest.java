@@ -1,4 +1,4 @@
-package com.ceiba.tiquete.controlador;
+package com.ceiba.proceso.controlador;
 
 import com.ceiba.ApplicationMock;
 import org.junit.Test;
@@ -18,8 +18,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ApplicationMock.class)
-@WebMvcTest(ConsultaControladorTiquete.class)
-public class ConsultaControladorTiqueteTest {
+@WebMvcTest(ConsultaControladorProceso.class)
+public class ConsultaControladorProcesoTest {
 
     @Autowired
     private MockMvc mocMvc;
@@ -29,7 +29,7 @@ public class ConsultaControladorTiqueteTest {
         // arrange
 
         // act - assert
-        mocMvc.perform(get("/tiquetes")
+        mocMvc.perform(get("/procesos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andDo(print())

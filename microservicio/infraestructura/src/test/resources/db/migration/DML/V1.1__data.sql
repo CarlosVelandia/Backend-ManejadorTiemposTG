@@ -10,11 +10,11 @@ insert into parque(id, nombre_parque, codigo, direccion, telefono)
 values (2, 'test actualizar', '333333', 'Calle 3 # 3-3', '333333');
 insert into parque(id, nombre_parque, codigo, direccion, telefono)
 values (3, 'test eliminar', '222222', 'Calle 2 # 2-2', '222222');
-insert into tiquete(id, id_usuario, id_parque, fecha_compra, valor)
+insert into proceso(id, id_usuario, id_parque, fecha_compra, valor)
 values (1, 1, 1, '2021-03-18', 15000);
-insert into tiquete(id, id_usuario, id_parque, fecha_compra, valor)
+insert into proceso(id, id_usuario, id_parque, fecha_compra, valor)
 values (2, 1, 1, '2021-03-19', 30000);
-insert into tiquete(id, id_usuario, id_parque, fecha_compra, valor)
+insert into proceso(id, id_usuario, id_parque, fecha_compra, valor)
 values (3, 1, 1, '2021-03-19', 30000);
 
 

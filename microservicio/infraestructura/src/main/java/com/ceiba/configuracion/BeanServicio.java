@@ -4,10 +4,10 @@ import com.ceiba.parque.puerto.respositorio.RepositorioParque;
 import com.ceiba.parque.servicio.ServicioActualizarParque;
 import com.ceiba.parque.servicio.ServicioCrearParque;
 import com.ceiba.parque.servicio.ServicioEliminarParque;
-import com.ceiba.tiquete.puerto.repositorio.RepositorioTiquete;
-import com.ceiba.tiquete.servicio.ServicioActualizarTiquete;
-import com.ceiba.tiquete.servicio.ServicioCrearTiquete;
-import com.ceiba.tiquete.servicio.ServicioEliminarTiquete;
+import com.ceiba.proceso.puerto.repositorio.RepositorioProceso;
+import com.ceiba.proceso.servicio.ServicioActualizarProceso;
+import com.ceiba.proceso.servicio.ServicioCrearProceso;
+import com.ceiba.proceso.servicio.ServicioEliminarProceso;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import com.ceiba.usuario.servicio.ServicioCrearUsuario;
@@ -50,19 +50,19 @@ public class BeanServicio {
         return new ServicioActualizarParque(repositorioParque);
     }
 
-    //BeanServiciosTiquete
+    //BeanServiciosProceso
     @Bean
-    public ServicioCrearTiquete servicioCrearTiquete(RepositorioTiquete repositorioTiquete, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
-        return new ServicioCrearTiquete(repositorioTiquete, repositorioUsuario, repositorioParque);
+    public ServicioCrearProceso servicioCrearProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
+        return new ServicioCrearProceso(repositorioProceso, repositorioUsuario, repositorioParque);
     }
 
     @Bean
-    public ServicioActualizarTiquete servicioActualizarTiquete(RepositorioTiquete repositorioTiquete, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
-        return new ServicioActualizarTiquete(repositorioTiquete, repositorioUsuario, repositorioParque);
+    public ServicioActualizarProceso servicioActualizarProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
+        return new ServicioActualizarProceso(repositorioProceso, repositorioUsuario, repositorioParque);
     }
 
     @Bean
-    public ServicioEliminarTiquete servicioEliminarTiquete(RepositorioTiquete repositorioTiquete) {
-        return new ServicioEliminarTiquete(repositorioTiquete);
+    public ServicioEliminarProceso servicioEliminarProceso(RepositorioProceso repositorioProceso) {
+        return new ServicioEliminarProceso(repositorioProceso);
     }
 }
