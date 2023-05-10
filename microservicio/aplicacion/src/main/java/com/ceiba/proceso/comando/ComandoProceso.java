@@ -13,7 +13,7 @@ public class ComandoProceso {
 
     private Long id;
     private Long idUsuario;
-    private Long idParque;
+    private Long idEtapa;
     private String fechaCompra;
     private double valor;
 

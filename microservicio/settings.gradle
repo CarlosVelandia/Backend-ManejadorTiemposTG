@@ -1,4 +1,4 @@
-rootProject.name = 'procesos-parque-diversiones'
+rootProject.name = 'procesos-etapa-diversiones'
 
 include ':infraestructura'
 include ':aplicacion'

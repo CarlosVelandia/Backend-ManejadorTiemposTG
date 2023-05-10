@@ -1,9 +1,9 @@
 package com.ceiba.configuracion;
 
-import com.ceiba.parque.puerto.respositorio.RepositorioParque;
-import com.ceiba.parque.servicio.ServicioActualizarParque;
-import com.ceiba.parque.servicio.ServicioCrearParque;
-import com.ceiba.parque.servicio.ServicioEliminarParque;
+import com.ceiba.etapa.puerto.respositorio.RepositorioEtapa;
+import com.ceiba.etapa.servicio.ServicioActualizarEtapa;
+import com.ceiba.etapa.servicio.ServicioCrearEtapa;
+import com.ceiba.etapa.servicio.ServicioEliminarEtapa;
 import com.ceiba.proceso.puerto.repositorio.RepositorioProceso;
 import com.ceiba.proceso.servicio.ServicioActualizarProceso;
 import com.ceiba.proceso.servicio.ServicioCrearProceso;
@@ -34,31 +34,31 @@ public class BeanServicio {
         return new ServicioActualizarUsuario(repositorioUsuario);
     }
 
-    //BeanServiciosParque
+    //BeanServiciosEtapa
     @Bean
-    public ServicioCrearParque servicioCrearParque(RepositorioParque repositorioParque) {
-        return new ServicioCrearParque(repositorioParque);
+    public ServicioCrearEtapa servicioCrearEtapa(RepositorioEtapa repositorioEtapa) {
+        return new ServicioCrearEtapa(repositorioEtapa);
     }
 
     @Bean
-    public ServicioEliminarParque servicioEliminarParque(RepositorioParque repositorioParque) {
-        return new ServicioEliminarParque(repositorioParque);
+    public ServicioEliminarEtapa servicioEliminarEtapa(RepositorioEtapa repositorioEtapa) {
+        return new ServicioEliminarEtapa(repositorioEtapa);
     }
 
     @Bean
-    public ServicioActualizarParque servicioActualizarParque(RepositorioParque repositorioParque) {
-        return new ServicioActualizarParque(repositorioParque);
+    public ServicioActualizarEtapa servicioActualizarEtapa(RepositorioEtapa repositorioEtapa) {
+        return new ServicioActualizarEtapa(repositorioEtapa);
     }
 
     //BeanServiciosProceso
     @Bean
-    public ServicioCrearProceso servicioCrearProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
-        return new ServicioCrearProceso(repositorioProceso, repositorioUsuario, repositorioParque);
+    public ServicioCrearProceso servicioCrearProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioEtapa repositorioEtapa) {
+        return new ServicioCrearProceso(repositorioProceso, repositorioUsuario, repositorioEtapa);
     }
 
     @Bean
-    public ServicioActualizarProceso servicioActualizarProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
-        return new ServicioActualizarProceso(repositorioProceso, repositorioUsuario, repositorioParque);
+    public ServicioActualizarProceso servicioActualizarProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioEtapa repositorioEtapa) {
+        return new ServicioActualizarProceso(repositorioProceso, repositorioUsuario, repositorioEtapa);
     }
 
     @Bean

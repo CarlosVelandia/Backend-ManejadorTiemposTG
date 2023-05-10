@@ -1,6 +1,6 @@
 package com.ceiba.proceso.servicio;
 
-import com.ceiba.parque.puerto.respositorio.RepositorioParque;
+import com.ceiba.etapa.puerto.respositorio.RepositorioEtapa;
 import com.ceiba.proceso.excepcion.ExcepcionProceso;
 import com.ceiba.proceso.modelo.entidad.Proceso;
 import com.ceiba.proceso.puerto.repositorio.RepositorioProceso;
@@ -11,27 +11,27 @@ public class ServicioActualizarProceso {
 
 
     private static final String EL_PROCESO_NO_EXISTE = "El proceso no existe";
-    private static final String EL_PARQUE_NO_EXISTE = "El parque no existe";
+    private static final String EL_ETAPA_NO_EXISTE = "El etapa no existe";
     private static final String EL_USUARIO_NO_EXISTE = "El suario no existe";
 
     private final RepositorioProceso repositorioProceso;
     private final RepositorioUsuario repositorioUsuario;
-    private final RepositorioParque repositorioParque;
+    private final RepositorioEtapa repositorioEtapa;
     private final ValidadorProceso validadorProceso;
 
-    public ServicioActualizarProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioParque repositorioParque) {
+    public ServicioActualizarProceso(RepositorioProceso repositorioProceso, RepositorioUsuario repositorioUsuario, RepositorioEtapa repositorioEtapa) {
         this.repositorioProceso = repositorioProceso;
         this.repositorioUsuario = repositorioUsuario;
-        this.repositorioParque = repositorioParque;
+        this.repositorioEtapa = repositorioEtapa;
         this.validadorProceso = new ValidadorProceso(this.repositorioProceso);
     }
 
     public void ejecutar(Proceso proceso) {
         validarExistenciaProceso(proceso.getId());
         validarExistenciaUsuario(proceso.getIdUsuario());
-        validarExistenciaParque(proceso.getIdParque());
+        validarExistenciaEtapa(proceso.getIdEtapa());
         validadorProceso.maximoProcesosPersona(proceso.getFechaCompra(), proceso.getIdUsuario());
-        validadorProceso.maximoProcesosParque(proceso.getFechaCompra(), proceso.getIdParque());
+        validadorProceso.maximoProcesosEtapa(proceso.getFechaCompra(), proceso.getIdEtapa());
         this.repositorioProceso.actualizar(proceso);
     }
 
@@ -49,10 +49,10 @@ public class ServicioActualizarProceso {
         }
     }
 
-    private void validarExistenciaParque(Long idParque) {
-        boolean existe = this.repositorioParque.existeId(idParque);
+    private void validarExistenciaEtapa(Long idEtapa) {
+        boolean existe = this.repositorioEtapa.existeId(idEtapa);
         if (!existe) {
-            throw new ExcepcionProceso(EL_PARQUE_NO_EXISTE);
+            throw new ExcepcionProceso(EL_ETAPA_NO_EXISTE);
         }
     }
 

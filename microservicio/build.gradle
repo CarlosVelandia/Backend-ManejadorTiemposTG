@@ -79,6 +79,6 @@ dependencies {
 
 bootJar {
     mainClassName = 'com.ceiba.Application'
-    baseName = 'procesos-parque-diversiones'
+    baseName = 'procesos-etapa-diversiones'
     version = version
 }

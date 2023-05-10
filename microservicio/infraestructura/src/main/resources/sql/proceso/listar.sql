@@ -4,13 +4,13 @@ select proceso.id,
        usuario.id as id_usuario,
        usuario.nombre_usuario,
        usuario.cedula,
-       parque.id  as id_parque,
-       parque.nombre_parque,
-       parque.codigo,
-       parque.direccion,
-       parque.telefono
+       etapa.id  as id_etapa,
+       etapa.nombre_etapa,
+       etapa.codigo,
+       etapa.direccion,
+       etapa.telefono
 from proceso
          inner join usuario on proceso.id_usuario = usuario.id
-         inner join parque on proceso.id_parque = parque.id
+         inner join etapa on proceso.id_etapa = etapa.id
 order by proceso.fecha_compra desc
 

@@ -11,7 +11,7 @@ public class FabricaProceso {
         return new Proceso(
                 comandoProceso.getId(),
                 comandoProceso.getIdUsuario(),
-                comandoProceso.getIdParque(),
+                comandoProceso.getIdEtapa(),
                 comandoProceso.getFechaCompra(),
                 comandoProceso.getValor()
         );

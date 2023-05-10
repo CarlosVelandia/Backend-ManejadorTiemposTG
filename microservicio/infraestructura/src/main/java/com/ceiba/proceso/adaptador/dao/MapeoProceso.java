@@ -1,7 +1,7 @@
 package com.ceiba.proceso.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.parque.modelo.dto.DtoParque;
+import com.ceiba.etapa.modelo.dto.DtoEtapa;
 import com.ceiba.proceso.modelo.dto.DtoProceso;
 import com.ceiba.usuario.modelo.dto.DtoUsuario;
 import org.springframework.jdbc.core.RowMapper;
@@ -23,15 +23,15 @@ public class MapeoProceso implements RowMapper<DtoProceso>, MapperResult {
         String nombreUsuario = resultSet.getString("nombre_usuario");
         String cedula = resultSet.getString("cedula");
 
-        Long idParque = resultSet.getLong("id_parque");
-        String nombreParque = resultSet.getString("nombre_parque");
+        Long idEtapa = resultSet.getLong("id_etapa");
+        String nombreEtapa = resultSet.getString("nombre_etapa");
         String codigo = resultSet.getString("codigo");
         String direccion = resultSet.getString("direccion");
         String telefono = resultSet.getString("telefono");
 
         DtoUsuario usuario = new DtoUsuario(idUsuario, nombreUsuario, cedula);
-        DtoParque parque = new DtoParque(idParque, nombreParque, codigo, direccion, telefono);
+        DtoEtapa etapa = new DtoEtapa(idEtapa, nombreEtapa, codigo, direccion, telefono);
 
-        return new DtoProceso(id, usuario, parque, fechaCompra, valor);
+        return new DtoProceso(id, usuario, etapa, fechaCompra, valor);
     }
 }

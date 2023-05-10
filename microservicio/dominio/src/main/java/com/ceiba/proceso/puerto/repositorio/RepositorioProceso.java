@@ -40,10 +40,10 @@ public interface RepositorioProceso {
      * Permite validar si se vendieron todos los procesos del dia
      *
      * @param fechaCompra
-     * @param idParque
+     * @param idEtapa
      * @return si se vendieron o no
      */
-    int maximoProcesosVendidos(LocalDate fechaCompra, Long idParque);
+    int maximoProcesosVendidos(LocalDate fechaCompra, Long idEtapa);
 
     /**
      * Permite validar si existe un proceso con un id

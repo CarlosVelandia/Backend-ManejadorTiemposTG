@@ -1,2 +1,2 @@
-insert into proceso (id_usuario, id_parque, fecha_compra, valor)
-values (:idUsuario, :idParque, :fechaCompra, :valor)
+insert into proceso (id_usuario, id_etapa, fecha_compra, valor)
+values (:idUsuario, :idEtapa, :fechaCompra, :valor)

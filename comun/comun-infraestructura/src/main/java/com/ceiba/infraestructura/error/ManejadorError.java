@@ -24,7 +24,7 @@ public class ManejadorError extends ResponseEntityExceptionHandler {
 
     private static  final String EXCEPCION_PROCESO= "ExcepcionProceso";
     private static  final String EXCEPCION_USUARIO = "ExcepcionUsuario";
-    private static  final String EXCEPCION_PARQUE = "ExcepcionParque";
+    private static  final String EXCEPCION_ETAPA = "ExcepcionEtapa";
 
 
 
@@ -37,7 +37,7 @@ public class ManejadorError extends ResponseEntityExceptionHandler {
         CODIGOS_ESTADO.put(ExcepcionTecnica.class.getSimpleName(), HttpStatus.INTERNAL_SERVER_ERROR.value());
         CODIGOS_ESTADO.put(EXCEPCION_PROCESO, HttpStatus.BAD_REQUEST.value());
         CODIGOS_ESTADO.put(EXCEPCION_USUARIO, HttpStatus.BAD_REQUEST.value());
-        CODIGOS_ESTADO.put(EXCEPCION_PARQUE, HttpStatus.BAD_REQUEST.value());
+        CODIGOS_ESTADO.put(EXCEPCION_ETAPA, HttpStatus.BAD_REQUEST.value());
         //en caso de tener otra excepcion matricularla aca
     }
 

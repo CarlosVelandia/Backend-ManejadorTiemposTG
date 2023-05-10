@@ -29,7 +29,7 @@ pipeline {
 			submoduleCfg: [],
 			userRemoteConfigs: [[
 			credentialsId: 'GitHub_CarlosVelandia',
-			url:'https://github.com/CarlosVelandia/BackendADNParque'
+			url:'https://github.com/CarlosVelandia/BackendADNEtapa'
 			]]
 		])
       }

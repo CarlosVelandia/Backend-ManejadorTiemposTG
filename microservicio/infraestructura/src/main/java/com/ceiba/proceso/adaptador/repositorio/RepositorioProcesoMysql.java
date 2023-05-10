@@ -65,10 +65,10 @@ public class RepositorioProcesoMysql implements RepositorioProceso {
     }
 
     @Override
-    public int maximoProcesosVendidos(LocalDate fechaCompra, Long idParque) {
+    public int maximoProcesosVendidos(LocalDate fechaCompra, Long idEtapa) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("fechaCompra", fechaCompra);
-        paramSource.addValue("idParque", idParque);
+        paramSource.addValue("idEtapa", idEtapa);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlMaximoProcesosVendidos, paramSource, Integer.class);
     }

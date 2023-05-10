@@ -22,13 +22,13 @@ public class Proceso {
 
     private static final String SE_DEBE_INGRESAR_LA_FECHA_DE_COMPRA = "Se debe ingresar la fecha de la compra";
     private static final String SE_DEBE_INGRESAR_EL_ID_DEL_USUARIO = "Se debe ingresar el id del usuario";
-    private static final String SE_DEBE_INGRESAR_EL_ID_DEL_PARQUE = "Se debe ingresar el id del parque";
+    private static final String SE_DEBE_INGRESAR_EL_ID_DEL_ETAPA = "Se debe ingresar el id del etapa";
     private static final String EL_ID_USUARIO_DEBE_SER_NUMERICO = "La Cedula debe ser numerica, no debe contener simbolos, ni espacios";
-    private static final String EL_ID_PARQUE_DEBE_SER_NUMERICO = "La Cedula debe ser numerica, no debe contener simbolos, ni espacios";
+    private static final String EL_ID_ETAPA_DEBE_SER_NUMERICO = "La Cedula debe ser numerica, no debe contener simbolos, ni espacios";
 
-    private static final String LUNES_NO_SE_VENDEN_PROCESOS = "Los Lunes no se pueden vender procesos por mantenimiento del parque";
+    private static final String LUNES_NO_SE_VENDEN_PROCESOS = "Los Lunes no se pueden vender procesos por mantenimiento del etapa";
     private static final String LIMITE_PROCESOS_POR_PERSONA_ALCANZADO = "Solo se permite un maximo de 5 procesos por persona";
-    private static final String LIMITE_PROCESOS_POR_PARQUE_ALCANZADO = "Solo se dispone de un maximo de 50 procesos por dia";
+    private static final String LIMITE_PROCESOS_POR_ETAPA_ALCANZADO = "Solo se dispone de un maximo de 50 procesos por dia";
     private static final double VALOR_PROCESO_SEMANA = 15000;
     private static final double VALOR_PROCESO_FIN_DE_SEMANA = 30000;
 
@@ -39,19 +39,19 @@ public class Proceso {
 
     private Long id;
     private Long idUsuario;
-    private Long idParque;
+    private Long idEtapa;
     private LocalDate fechaCompra;
     private double valor;
 
-    public Proceso(Long id, Long idUsuario, Long idParque, String fechaCompra, Double valor) {
+    public Proceso(Long id, Long idUsuario, Long idEtapa, String fechaCompra, Double valor) {
 
         this.valor=valor;
 
         validarObligatorio(idUsuario, SE_DEBE_INGRESAR_EL_ID_DEL_USUARIO);
-        validarObligatorio(idParque, SE_DEBE_INGRESAR_EL_ID_DEL_PARQUE);
+        validarObligatorio(idEtapa, SE_DEBE_INGRESAR_EL_ID_DEL_ETAPA);
         validarObligatorio(fechaCompra, SE_DEBE_INGRESAR_LA_FECHA_DE_COMPRA);
         validarNumerico(Long.toString(idUsuario), EL_ID_USUARIO_DEBE_SER_NUMERICO);
-        validarNumerico(Long.toString(idParque), EL_ID_PARQUE_DEBE_SER_NUMERICO);
+        validarNumerico(Long.toString(idEtapa), EL_ID_ETAPA_DEBE_SER_NUMERICO);
         validarFormatoFecha(darFormatoFecha(fechaCompra), FORMATO_DE_FECHA_DE_COMPRA_INCORRECTA);
         validarFechaCorrecta(darFormatoFecha(fechaCompra), LA_FECHA_DE_COMPRA_INVALIDA);
         LocalDate fechaCompraFinal = obtenerLocalDateDesdeUnString(fechaCompra);
@@ -60,7 +60,7 @@ public class Proceso {
 
         this.id = id;
         this.idUsuario = idUsuario;
-        this.idParque = idParque;
+        this.idEtapa = idEtapa;
         this.fechaCompra = fechaCompraFinal;
 
     }
